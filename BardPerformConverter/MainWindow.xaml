@@ -1,0 +1,38 @@
+﻿<Window x:Class="BardPerformConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BardPerformConverter"
+        mc:Ignorable="d"
+        Title="Bard Perform Converter" Height="459.568" Width="662.965">
+    <Grid>
+        <TabControl x:Name="TabControl" HorizontalAlignment="Left" Height="429" VerticalAlignment="Top" Width="655">
+            <TabItem x:Name="tab_notes" Header="Notes">
+                <Grid>
+                    <TextBox x:Name="text_input" HorizontalAlignment="Left" Height="257" Margin="10,26,0,0" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="623" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True"/>
+                    <Button Content="Clear" HorizontalAlignment="Left" Margin="10,304,0,0" VerticalAlignment="Top" Width="75" Click="Button_Clear_Click"/>
+                    <Button Content="Next" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="558,356,0,0" Click="switch_Timing"/>
+                    <TextBlock x:Name="text_error" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="286,358,0,0" Foreground="Red"/>
+                    <TextBox HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Margin="161,356,0,0" TextAlignment="Center" Name="default_delay"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="15,356,0,0" TextWrapping="Wrap" Text="(Optional) Default Delay:" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tab_timing" Header="Timing">
+                <Grid x:Name="grid_timing" KeyDown="key_press" Focusable="true" Loaded="grid_timing_Loaded">
+                    <Button Content="Previous" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,356,0,0" Click="switch_Notes"/>
+                    <Button Content="Next" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="558,356,0,0" Click="switch_Output"/>
+                    <TextBlock x:Name="text_current_note" Text="A" FontSize="24" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="316,140,0,0" TextAlignment="Center"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="131,197,0,0" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Top" TextAlignment="Center"><Run Text="Click any key on your keyboard to the rhythm of the song"/><LineBreak/><Run Text="("/><Run Text="Click &quot;Next&quot; when finished&quot;)"/></TextBlock>
+                    <TextBlock x:Name="text_delay" HorizontalAlignment="Left" FontSize="15" TextWrapping="Wrap" Text="Delay:" VerticalAlignment="Top" Margin="268,278,0,0"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tab_output" Header="Output">
+                <Grid>
+                    <TextBox x:Name="text_output" HorizontalAlignment="Left" Height="257" Margin="10,26,0,0" TextWrapping="Wrap" AcceptsReturn="True" VerticalAlignment="Top" Width="623"/>
+                    <Button Content="Again" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="558,356,0,0" Click="reset"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
