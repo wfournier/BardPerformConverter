@@ -24,13 +24,15 @@ namespace BardPerformConverter
     public partial class MainWindow : Window
     {
         Dictionary<string, string[]> keys = new Dictionary<string, string[]>();
-        string[] notes;
         List<string[]> hotkeys = new List<string[]>();
         List<int> delays = new List<int>();
-        int def_delay = 0;
         Stopwatch sw = new Stopwatch();
+
+        string[] notes;
+        int def_delay = 0;
         int current_note_count = 0;
         bool done = false;
+
         public MainWindow()
         {
             InitializeComponent();
