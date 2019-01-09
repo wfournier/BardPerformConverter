@@ -1,6 +1,11 @@
 # bard-perform-converter-ffxiv
 A small tool for the game Final Fantasy XIV: A Realm Reborn where you can simply put music notes for a song, press any key to the rhythm, and it will output XML text to be used with Logitech Gaming Software.
 
+
+**DISCLAIMER:** 
+- I literally did this tool in an hour and did not bother validating every input options, so it may very well crash on you if you enter invalid data.
+- The hotkeys associated with each notes are hardcoded and are from **MY** in-game keybinds, so unless you have the **EXACT** same setup as mine, this tool won't be very useful for you unless you manually change them to yours in the code (I might add an option to personalize keybinds in the future).
+
 Steps to create your own macros with this tool:
 
 1. Find music notes to any song in the correct format (e.g. **D Eb E F# G F# D B-1**).
