@@ -89,7 +89,7 @@ namespace BardPerformConverter
         }
         private void switch_Timing(object sender, RoutedEventArgs e)
         {
-            string input = text_input.Text.ToString().Replace(",", "");
+            string input = text_input.Text.ToString().Replace(",", "").Trim();
             input = input.Replace("♭", "b");
             input = input.Replace(Environment.NewLine + Environment.NewLine, Environment.NewLine);
 
@@ -162,6 +162,11 @@ namespace BardPerformConverter
                             output += "<delay milliseconds=\"" + delays[count] + "\"/>";
                             output += Environment.NewLine;
                         }
+                        else
+                        {
+                            output += "<delay milliseconds=\"100\"/>";
+                            output += Environment.NewLine;
+                        }
                     }
                 }
                 else
@@ -183,6 +188,11 @@ namespace BardPerformConverter
                         if (count < delays.Count)
                         {
                             output += "<delay milliseconds=\"" + delays[count] + "\"/>";
+                            output += Environment.NewLine;
+                        }
+                        else
+                        {
+                            output += "<delay milliseconds=\"100\"/>";
                             output += Environment.NewLine;
                         }
                     }
